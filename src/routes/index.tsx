@@ -124,7 +124,7 @@ function Index() {
                 A tiny cardio proposal
               </motion.p>
               <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-normal sm:text-7xl">
-                HEY AICHA <motion.span className="inline-block" animate={reduceMotion ? undefined : { scale: [1, 1.18, 1] }} transition={{ repeat: Infinity, duration: 1.6 }}>❤️</motion.span>
+                HEY AICHA {reduceMotion ? <span>❤️</span> : <motion.span className="inline-block" animate={{ scale: [1, 1.18, 1] }} transition={{ repeat: Infinity, duration: 1.6 }}>❤️</motion.span>}
               </motion.h1>
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-5 text-lg font-medium text-muted-foreground sm:text-xl">
                 I have an important question for you…
@@ -147,7 +147,7 @@ function Index() {
                         </motion.p>
                       </AnimatePresence>
                       <motion.div className="absolute bottom-4 left-3 z-10" animate={{ scale: 1 + Math.min(attempts, 8) * 0.085 }} transition={{ type: "spring", stiffness: 260, damping: 18 }}>
-                        <Button onClick={celebrate} className="love-pulse whitespace-nowrap">{attempts >= 8 ? "YES ❤️🏃‍♂️" : "❤️ YES, LET'S RUN"}</Button>
+                        <Button variant="love" size="love" onClick={celebrate} className="love-pulse">{attempts >= 8 ? "YES ❤️🏃‍♂️" : "❤️ YES, LET'S RUN"}</Button>
                       </motion.div>
                       <motion.div
                         className="absolute left-[62%] top-[116px] z-20 sm:top-[105px]"
@@ -157,6 +157,7 @@ function Index() {
                         <Button
                           ref={noButtonRef}
                           variant="mischief"
+                          size="love"
                           aria-label="No — but this button will run away"
                           onPointerEnter={dodgeNo}
                           onPointerDown={(event) => { event.preventDefault(); dodgeNo(); }}
@@ -197,9 +198,11 @@ function Index() {
                 <p>I know it's just a run…<br />But every little thing is better when I get to do it with you.</p>
                 <p>Tomorrow, don't worry about your pace.<br /><strong className="text-foreground">Just stay beside me. ❤️</strong></p>
               </div>
-              <motion.p animate={reduceMotion ? undefined : { scale: [1, 1.025, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="mx-auto mt-8 max-w-3xl font-display text-3xl font-black leading-tight tracking-normal sm:text-5xl">
-                SEE YOU TOMORROW, MY RUNNING PARTNER 🏃‍♀️❤️🏃‍♂️
-              </motion.p>
+              {reduceMotion ? (
+                <p className="mx-auto mt-8 max-w-3xl font-display text-3xl font-black leading-tight tracking-normal sm:text-5xl">SEE YOU TOMORROW, MY RUNNING PARTNER 🏃‍♀️❤️🏃‍♂️</p>
+              ) : (
+                <motion.p animate={{ scale: [1, 1.025, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="mx-auto mt-8 max-w-3xl font-display text-3xl font-black leading-tight tracking-normal sm:text-5xl">SEE YOU TOMORROW, MY RUNNING PARTNER 🏃‍♀️❤️🏃‍♂️</motion.p>
+              )}
               <p className="mt-4 font-bold text-primary">Your favorite trainer 😎</p>
             </div>
           </motion.section>
