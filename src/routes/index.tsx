@@ -68,7 +68,7 @@ function Index() {
   const [questionVisible, setQuestionVisible] = useState(false);
   const [celebrating, setCelebrating] = useState(false);
   const [attempts, setAttempts] = useState(0);
-  const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
+  const [noPosition, setNoPosition] = useState({ x: 220, y: 120 });
   const gameAreaRef = useRef<HTMLDivElement>(null);
   const noButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -150,7 +150,7 @@ function Index() {
                         <Button variant="love" size="love" onClick={celebrate} className="love-pulse">{attempts >= 8 ? "YES ❤️🏃‍♂️" : "❤️ YES, LET'S RUN"}</Button>
                       </motion.div>
                       <motion.div
-                        className="absolute left-[62%] top-[116px] z-20 sm:top-[105px]"
+                        className="absolute left-0 top-0 z-20"
                         animate={noPosition}
                         transition={{ type: "spring", stiffness: 520, damping: 24 }}
                       >

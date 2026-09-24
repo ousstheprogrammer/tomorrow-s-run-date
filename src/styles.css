@@ -172,8 +172,8 @@
 }
 
 @keyframes gentle-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.14); }
 }
 
 @utility heart-drift { animation: heart-drift var(--drift-time, 14s) linear infinite; }
