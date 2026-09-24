@@ -197,6 +197,8 @@ function Index() {
                 <p><strong className="text-foreground">Thank you for saying yes.</strong></p>
                 <p>I know it's just a run…<br />But every little thing is better when I get to do it with you.</p>
                 <p>Tomorrow, don't worry about your pace.<br /><strong className="text-foreground">Just stay beside me. ❤️</strong></p>
+                 <p className="pt-4"><strong className="text-foreground">I’ll always be your number one supporter. ❤️</strong></p>
+                 <p>And by the way…<br /><strong className="text-primary">you owe me a lot of kisses 😘😘😘</strong></p>
               </div>
               {reduceMotion ? (
                 <p className="mx-auto mt-8 max-w-3xl font-display text-3xl font-black leading-tight tracking-normal sm:text-5xl">SEE YOU TOMORROW, MY RUNNING PARTNER 🏃‍♀️❤️🏃‍♂️</p>
