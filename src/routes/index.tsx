@@ -3,6 +3,7 @@ import confetti from "canvas-confetti";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import yesSurpriseImage from "../assets/aicha-yes-surprise.png.asset.json";
 import trainerImage from "../assets/aicha-trainer.png.asset.json";
 import { Button } from "../components/ui/button";
 
@@ -180,6 +181,21 @@ function Index() {
             <div className="w-full text-center">
               <motion.div initial={{ scale: 0, rotate: -12 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 180, damping: 12 }} className="text-6xl sm:text-8xl">🏃‍♀️❤️🏃‍♂️</motion.div>
               <h1 className="mt-3 font-display text-5xl font-black leading-none tracking-normal text-primary sm:text-7xl">YEEEEES! ❤️🏃‍♂️</h1>
+               <motion.figure
+                 initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24, scale: 0.94 }}
+                 animate={{ opacity: 1, y: 0, scale: 1 }}
+                 transition={{ delay: reduceMotion ? 0 : 0.25, type: "spring", stiffness: 150, damping: 18 }}
+                 className="mx-auto mt-6 max-w-2xl overflow-hidden rounded-2xl border border-border-strong bg-card shadow-love"
+               >
+                 <img
+                   src={yesSurpriseImage.url}
+                   alt="Your personal trainer and number one supporter"
+                   className="aspect-video w-full object-cover"
+                 />
+                 <figcaption className="px-4 py-3 font-display text-sm font-black uppercase tracking-[0.12em] text-primary sm:text-base">
+                   Your personal trainer — and your number one supporter ❤️
+                 </figcaption>
+               </motion.figure>
               <p className="mt-5 text-lg font-bold sm:text-2xl">I knew you couldn't resist running with your favorite trainer 😎</p>
               <p className="mt-2 text-muted-foreground">Tomorrow = You + Me + Running + Good vibes ❤️</p>
               <div className="mx-auto mt-7 max-w-xl rounded-2xl border border-border-strong bg-card p-5 text-left shadow-love backdrop-blur-lg sm:p-7">
